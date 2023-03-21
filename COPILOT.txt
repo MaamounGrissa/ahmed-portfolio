@@ -1,0 +1,8 @@
+COPILOT
+VERCEL
+MONGODB
+EAMILJS
+Animation Package => https://michalsnik.github.io/aos/
+Multilaguage Package => https://betterprogramming.pub/add-multi-language-support-in-react-js-a771c9ab31c3
+
+DATA PRACTICES

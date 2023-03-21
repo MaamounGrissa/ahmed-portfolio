@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+
+.product-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.search-input {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
