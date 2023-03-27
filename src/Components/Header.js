@@ -13,14 +13,46 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = [
+  {title: 'Movies App', link: "/movies"},
+  {title: 'Other App', link: "/others"}
+];
 //const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Header() {
     const { i18n } = useTranslation();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [weather, setWeather] = React.useState({
+    icon: '',
+    description: ''
+  });
+
+  const options = {
+    method: 'GET',
+    url: 'https://open-weather13.p.rapidapi.com/city/Copenhagen',
+    headers: {
+      'X-RapidAPI-Key': '28cec93ed3mshfef752511b520bbp196561jsnd6c18a5654b2',
+      'X-RapidAPI-Host': 'open-weather13.p.rapidapi.com'
+    }
+  };
+
+  React.useEffect(() => {
+    axios.request(options).then(function (response) {
+      const iconCode = response.data.weather[0].icon;
+      const iconUrl = "http://openweathermap.org/img/w/" + iconCode + ".png";
+      setWeather({
+        icon: iconUrl,
+        description: response.data.weather[0].description
+      });
+    }).catch(function (error) {
+      console.error(error);
+    });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -90,9 +122,16 @@ function Header() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
+                <Button
+                  key={page.title}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: 'white', display: 'block' }}
+                >
+                  <Link to={page.link} key={page.title}>
+                      <Typography textAlign="center" variant="h6" component="h6">{page.title}</Typography>
+                  </Link>
+                </Button>
+
               ))}
             </Menu>
           </Box>
@@ -118,15 +157,22 @@ function Header() {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.title}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page}
+                <Link to={page.link} key={page.title}>
+                    <Typography color="white" textAlign="center" variant="h6" component="h6">{page.title}</Typography>
+                </Link>
               </Button>
             ))}
           </Box>
           <Box sx={{ flexGrow: 0 }}>
+            <Tooltip title={weather.description}>
+              <IconButton sx={{ p: 0, marginRight: "10px" }}>
+                <Avatar src={weather.icon} alt='Weather' />
+              </IconButton>
+            </Tooltip>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar>

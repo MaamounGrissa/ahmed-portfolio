@@ -1,5 +1,8 @@
 {
     "intro_title": "Hi, I'm Ahmed Sharkawi",
     "intro_subtitle": "I'm a Full Stack Web Developer",
-    "intro_description": "I'm a Full Stack Web Developer with 3 years of experience in building websites and web applications. I have a passion for building websites and web applications that are fast, responsive, and user-friendly. I'm also a big fan of open source and I'm always looking for new ways to improve my skills."
+    "intro_description": "I'm a Full Stack Web Developer with 3 years of experience in building websites and web applications. I have a passion for building websites and web applications that are fast, responsive, and user-friendly. I'm also a big fan of open source and I'm always looking for new ways to improve my skills.",
+    "movies_title": "Search for movies",
+    "skills_title": "My Skills",
+    "projects_title": "My Projects"
 }

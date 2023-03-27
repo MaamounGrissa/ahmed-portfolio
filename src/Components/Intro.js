@@ -8,8 +8,8 @@ function Intro() {
   return (
     <Box sx={{ minHeight: "100vh", width: "100vw" }}>
         <Container >
-            <Grid container sx={{ flexDirection: i18n.language === 'ar' ? 'row-reverse' : 'initial' }}>
-                <Grid item xs={12} md={6}>
+            <Grid container sx={{ flexDirection: i18n.language === 'ar' ? 'row-reverse' : 'initial', alignItems: 'center' }}>
+                <Grid item xs={12} md={6} data-aos="fade-right" data-aos-duration="1200" >
                     <Box display="flex" justifyContent="center" flexDirection="column" sx={{ height: "100vh"}}>
                         <Typography variant="h1" component="h1" 
                                     sx={{ fontWeight: 700, fontSize: { xs: "2rem", md: "3rem" }, direction: i18n.language === 'ar' ? 'rtl' : 'ltr' }}>
@@ -26,8 +26,8 @@ function Intro() {
                     </Box>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    <Box display="flex" justifyContent="center" alignItems="center">
-                        <img src="/images/ahmed.png" alt="Ahmed" />
+                    <Box display="flex" justifyContent="center" alignItems="center" data-aos="fade-left" data-aos-duration="1200" >
+                        <img className='my-picture' src="/images/me.jpg" alt="Ahmed" />
                     </Box>
                 </Grid>
             </Grid>

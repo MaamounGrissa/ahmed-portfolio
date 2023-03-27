@@ -1,13 +1,17 @@
 import React from 'react'
 import Layout from '../Components/Layout'
 import Intro from '../Components/Intro'
-import Movies from '../Components/Movies'
+//import Movies from '../Components/Movies'
+import Skills from '../Components/Skills'
+import Projects from '../Components/Projects'
 
 function Home() {
   return (
     <Layout>
         <Intro />
-        <Movies />
+        <Skills />
+        <Projects />
+        {/* <Movies /> */}
     </Layout>
   )
 }

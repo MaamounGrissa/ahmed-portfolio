@@ -1,5 +1,8 @@
 {
     "intro_title": "Bonjour",
     "intro_subtitle": "Je suis Fullstack Web Developer",
-    "intro_description": "Je suis un développeur web fullstack basé à Paris. Je suis passionné par le développement web et j'aime créer des sites web et des applications web."
+    "intro_description": "Je suis un développeur web fullstack basé à Paris. Je suis passionné par le développement web et j'aime créer des sites web et des applications web.",
+    "movies_title": "Recherche de films",
+    "skills_title": "Mes Compétences",
+    "projects_title": "Mes Projets"
 }
