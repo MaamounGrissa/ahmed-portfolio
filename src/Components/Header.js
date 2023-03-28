@@ -18,7 +18,7 @@ import axios from 'axios';
 
 const pages = [
   {title: 'Movies App', link: "/movies"},
-  {title: 'Other App', link: "/others"}
+  {title: 'Contact', link: "/contact"}
 ];
 //const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
